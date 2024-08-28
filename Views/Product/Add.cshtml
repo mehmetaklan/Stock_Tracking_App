@@ -1,0 +1,32 @@
+﻿@model Stock_Tracking_App.Models.Entity.TBL_Product
+
+@{
+    ViewBag.Title = "Add";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<form class="form-group mx-5" method="post">
+    <div data-mdb-input-init class="form-outline mb-4">
+        <label class="form-label" for="ProductName">Ürün Adı</label>
+        <input type="text" id="ProductName" name="ProductName" class="form-control" />
+    </div>
+    <div data-mdb-input-init class="form-outline mb-4">
+        <label class="form-label" for="ProductBrand">Ürün Markası</label>
+        <input type="text" id="ProductBrand" name="ProductBrand" class="form-control" />
+    </div>
+    <div data-mdb-input-init class="form-outline mb-4">
+        <label class="form-label" for="ProductPrice">Ürün Fiyatı</label>
+        <input type="text" id="ProductPrice" name="ProductPrice" class="form-control" />
+    </div>
+    <div data-mdb-input-init class="form-outline mb-4">
+        <label class="form-label" for="Stock">Stok</label>
+        <input type="text" id="Stock" name="RemainingStock" pattern="[0-9]{3}" class="form-control" />
+    </div>
+
+    @Html.DropDownListFor(m => m.TBL_Category.CategoryId, (List<SelectListItem>)ViewBag.Value, new { @class = "form-control" })
+    </div>
+    <div style="width:100%" class="justify-content-center align-content-center mt-4">
+        <button type="submit" class="btn btn-primary input-group btn-block mb-4">Ekle</button>
+    </div>
+</form>
+

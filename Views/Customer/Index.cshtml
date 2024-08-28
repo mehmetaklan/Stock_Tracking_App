@@ -1,0 +1,36 @@
+﻿@using Stock_Tracking_App.Models.Entity
+@model List<TBL_Customer>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<div class="px-5">
+    <a href="/Customer/Add" type="button" class="btn btn-primary"> Müşteri Ekle ➕</a>
+</div>
+
+
+<table class="table table-bordered table-light table-hover mt-5">
+    <thead>
+        <tr>
+            <th class="text-center">ID</th>
+            <th class="text-center">Müşteri Adı</th>
+            <th class="text-center">Müşteri Soyadı</th>
+            <th class="text-center">Güncelle</th>
+            <th class="text-center">Sil</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var customer in Model)
+            {
+                <tr>
+                    <td class="text-center">@customer.CustomerId</td>
+                    <td class="text-center">@customer.CustomerFName</td>
+                    <td class="text-center">@customer.CustomerLName</td>
+                    <td class="text-center"><a href="/Customer/Update/@customer.CustomerId" class="btn btn-warning">Güncelle 🔄</a></td>
+                    <td class="text-center"><a href="/Customer/Delete/@customer.CustomerId" class="btn btn-danger">Sil ✖</a></td>
+                </tr>
+            }
+    </tbody>
+</table>
+

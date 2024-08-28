@@ -1,0 +1,34 @@
+﻿@using Stock_Tracking_App.Models.Entity;
+@model List<TBL_Category>
+@{ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+<div class="px-5">
+    <a href="/Category/AddCategory" type="button"  class="btn btn-primary"> Kategori Ekle ➕</a>
+</div>
+<table class="table table-bordered table-light table-hover mt-3">
+    <thead>
+        <tr>
+            <th class="text-center">Kategori Id</th>
+            <th class="text-center">Kategori Ad</th>
+            <th class="text-center">Kategori Güncelle</th>
+            <th class="text-center">Kategori Sil</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var category in Model)
+        {
+            <tr>
+                <td class="text-center">
+                    @category.CategoryId
+                </td>
+                <td class="text-center">
+                    @category.CategoryName
+                </td>
+                <td class="text-center"><a href="/Category/Update/@category.CategoryId" class="btn btn-warning">Güncelle 🔄</a></td>
+                <td class="text-center"><a href="/Category/Delete/@category.CategoryId" class="btn btn-danger">Sil ✖</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+

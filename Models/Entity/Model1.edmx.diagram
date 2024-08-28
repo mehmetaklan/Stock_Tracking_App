@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="3fc535eaf8ac46c9972b9625055f165a" Name="Diagram1">
+        <EntityTypeShape EntityType="Stock_Tracking_App_Model.sysdiagrams" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Stock_Tracking_App_Model.TBL_Category" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Stock_Tracking_App_Model.TBL_Customer" Width="1.5" PointX="3" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Stock_Tracking_App_Model.TBL_Product" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="Stock_Tracking_App_Model.TBL_Sales" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <AssociationConnector Association="Stock_Tracking_App_Model.FK_TBL_Product_TBL_Category" ManuallyRouted="false" />
+        <AssociationConnector Association="Stock_Tracking_App_Model.FK_TBL_Sales_TBL_Customer" ManuallyRouted="false" />
+        <AssociationConnector Association="Stock_Tracking_App_Model.FK_TBL_Sales_TBL_Product" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,39 @@
+﻿@using Stock_Tracking_App.Models.Entity
+@model List<TBL_Product>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+<div class="px-5">
+    <a href="/Product/Add" type="button" class="btn btn-primary"> Ürün Ekle ➕</a>
+</div>
+<table class="table table-bordered table-light table-hover mt-3">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Ürün Adı</th>
+            <th>Marka</th>
+            <th>Fiyat</th>
+            <th>Kalan Stok</th>
+            <th>Kategori</th>
+            <th>Güncelle</th>
+            <th>Sil</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var product in Model)
+        {
+            <tr>
+                <td>@product.ProductId</td>
+                <td>@product.ProductName</td>
+                <td>@product.ProductBrand</td>
+                <td>@product.ProductPrice TL</td>
+                <td>@product.RemainingStock</td>
+                <td>@product.TBL_Category.CategoryName</td> @*Null Reference Exception:Check , Join Command*@
+                <td><a href="/Product/Update/@product.ProductId" class="btn btn-warning">Güncelle 🔄</a></td>
+                <td><a href="/Product/Delete/@product.ProductId" class="btn btn-danger">Sil ✖</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+
